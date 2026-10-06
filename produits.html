@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Produits &amp; services — IDEONS</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Saira+Extra+Condensed:wght@700;800&family=Libre+Caslon+Condensed:wght@400;700&family=IBM+Plex+Mono:ital,wght@1,500&display=swap" rel="stylesheet">
+
+  <!-- Même <head> que index.html, avec la page supplémentaire
+       assets/css/11-pages.css (crumb, pills, fiches techniques, tarifs...). -->
+  <link rel="stylesheet" href="assets/css/01-tokens.css">
+  <link rel="stylesheet" href="assets/css/02-base.css">
+  <link rel="stylesheet" href="assets/css/03-components.css">
+  <link rel="stylesheet" href="assets/css/04-header.css">
+  <link rel="stylesheet" href="assets/css/05-hero.css">
+  <link rel="stylesheet" href="assets/css/06-how.css">
+  <link rel="stylesheet" href="assets/css/07-range.css">
+  <link rel="stylesheet" href="assets/css/08-safety.css">
+  <link rel="stylesheet" href="assets/css/09-footer.css">
+  <link rel="stylesheet" href="assets/css/10-effects.css">
+  <link rel="stylesheet" href="assets/css/11-pages.css">
+  <link rel="stylesheet" href="assets/css/12-auth.css">
+</head>
+<body>
+
+<!-- HEADER — styles : assets/css/04-header.css (bloc partagé) -->
+<header class="site-header">
+  <div class="site-header__inner">
+    <a href="index.html" class="logo" aria-label="IDEONS, accueil"><span>IDE</span><span>ONS</span></a>
+
+    <nav class="nav" aria-label="Navigation principale">
+      <a href="index.html">Accueil</a>
+      <a href="produits.html" aria-current="page">Produits &amp; services</a>
+      <a href="index.html#securite">Sécurité</a>
+      <a href="index.html#gamme">Entreprises</a>
+      <a href="equipe.html">À propos</a>
+    </nav>
+
+    <div class="header-actions">
+      <a href="connexion.html">Connexion</a>
+      <a href="inscription.html" class="btn btn--dark">S'inscrire</a>
+    </div>
+  </div>
+</header>
+
+<!-- PAGE PRODUITS — styles : assets/css/11-pages.css
+     (+ assets/css/03-components.css pour .eyebrow / .section-head / .btn,
+      assets/css/06-how.css pour les cartes .step des services,
+      assets/css/07-range.css pour les cartes .product des véhicules) -->
+<main class="container page">
+  <p class="crumb"><a href="index.html">Accueil</a> / Produits &amp; services</p>
+
+  <div class="section-head">
+    <div>
+      <span class="eyebrow">Catalogue</span>
+      <h1 class="section-title">Produits<br><em>&amp; services</em></h1>
+    </div>
+    <p class="section-head__aside">Des véhicules autonomes à posséder, partager ou commander à la demande — et les services qui les font rouler.</p>
+  </div>
+
+  <p class="pills">
+    <a class="pill active" href="produits.html" aria-current="page">Tous</a>
+    <a class="pill" href="#vehicules">Véhicules</a>
+    <a class="pill" href="#services">Services</a>
+    <a class="pill" href="#cta">Essai</a>
+  </p>
+
+  <!-- ============================================================
+       01 — VÉHICULES — styles : assets/css/07-range.css + assets/css/11-pages.css
+       ============================================================ -->
+  <h2 class="rule" id="vehicules"><span>01 — Véhicules</span></h2>
+  <div class="products products--2">
+    <article class="product reveal">
+      <div class="product__visual product__visual--sand">
+        <span class="badge">Nouveau</span>
+        <svg viewBox="0 0 240 92" aria-hidden="true">
+          <ellipse cx="120" cy="84" rx="104" ry="4" fill="#161210" fill-opacity=".12"/>
+          <rect x="108" y="2" width="14" height="7" rx="1" fill="#161210"/>
+          <path d="M8 66c0-8 14-12 40-16l22-16q4-4 12-4h68q8 0 14 6l14 12c27 3 54 6 54 16v6q0 4-6 4H14q-6 0-6-4z" fill="#d9443a"/>
+          <path d="M76 46l12-12h30v12zM124 46V34h28l14 12z" fill="#2a1614"/>
+          <circle cx="48" cy="74" r="13" fill="#161210"/><circle cx="48" cy="74" r="6" fill="#e9e2d6"/>
+          <circle cx="188" cy="74" r="13" fill="#161210"/><circle cx="188" cy="74" r="6" fill="#e9e2d6"/>
+        </svg>
+      </div>
+      <div class="product__body">
+        <div class="product__head">
+          <div>
+            <p class="label">Berline autonome · Personnel</p>
+            <h3>IDEONS One</h3>
+          </div>
+          <p class="tarif">À partir de<br><strong>[PRIX]</strong></p>
+        </div>
+        <dl class="specs">
+          <div><dt>Autonomie</dt><dd>[X] km</dd></div>
+          <div><dt>Places</dt><dd>4</dd></div>
+          <div><dt>Recharge</dt><dd>[X] min</dd></div>
+          <div><dt>Capteurs</dt><dd>360°</dd></div>
+        </dl>
+        <p class="duo"><a class="btn btn--red" href="#">Configurer</a><a class="btn btn--outline" href="#cta">Réserver un essai</a></p>
+      </div>
+    </article>
+
+    <article class="product product--dark reveal">
+      <div class="product__visual product__visual--ink">
+        <svg viewBox="0 0 240 96" aria-hidden="true">
+          <ellipse cx="120" cy="86" rx="104" ry="4" fill="#000" fill-opacity=".4"/>
+          <rect x="10" y="10" width="220" height="62" rx="16" fill="#f5f1ea"/>
+          <g fill="#161210">
+            <rect x="24" y="22" width="40" height="20" rx="3"/>
+            <rect x="70" y="22" width="40" height="20" rx="3"/>
+            <rect x="116" y="22" width="40" height="20" rx="3"/>
+            <rect x="162" y="22" width="56" height="20" rx="6"/>
+          </g>
+          <rect x="10" y="50" width="220" height="4" fill="#d9443a"/>
+          <circle cx="56" cy="74" r="13" fill="#2a2320"/><circle cx="56" cy="74" r="6" fill="#9a918a"/>
+          <circle cx="188" cy="74" r="13" fill="#2a2320"/><circle cx="188" cy="74" r="6" fill="#9a918a"/>
+        </svg>
+      </div>
+      <div class="product__body">
+        <div class="product__head">
+          <div>
+            <p class="label">Navette autonome · Partagé</p>
+            <h3>IDEONS Shuttle</h3>
+          </div>
+          <p class="tarif">Tarif<br><strong>Sur devis</strong></p>
+        </div>
+        <dl class="specs">
+          <div><dt>Autonomie</dt><dd>[X] km</dd></div>
+          <div><dt>Places</dt><dd>[X]</dd></div>
+          <div><dt>Accès</dt><dd>PMR</dd></div>
+          <div><dt>Usage</dt><dd>Ville, campus</dd></div>
+        </dl>
+        <p class="duo"><a class="btn btn--red" href="#">Demander un devis</a><a class="btn btn--ghost" href="#">Fiche technique</a></p>
+      </div>
+    </article>
+  </div>
+
+  <!-- ============================================================
+       02 — SERVICES — styles : assets/css/06-how.css (cartes .step)
+       + assets/css/11-pages.css (tarifs, listes, variante rouge)
+       ============================================================ -->
+  <h2 class="rule" id="services"><span>02 — Services</span></h2>
+  <div class="steps services">
+    <article class="step reveal">
+      <div class="step__icon">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M8 12h8M12 8l4 4-4 4"/></svg>
+      </div>
+      <h3>IDEONS Ride</h3>
+      <p>Le robotaxi à la demande. Commandez, montez, arrivez.</p>
+      <p class="service-price">Dès [PRIX] <small>/ trajet</small></p>
+      <ul class="ticks">
+        <li>Prise en charge en quelques minutes</li>
+        <li>Prix fixe annoncé avant le départ</li>
+        <li>Suivi du trajet en temps réel</li>
+      </ul>
+      <p><a class="btn btn--outline full" href="#">Télécharger l'app</a></p>
+    </article>
+
+    <article class="step step--red reveal">
+      <div class="step__icon">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l2.6 5.5 6 .8-4.4 4.2 1.1 6-5.3-2.9L6.7 19.5l1.1-6L3.4 9.3l6-.8z"/></svg>
+      </div>
+      <span class="badge step__badge">Populaire</span>
+      <h3>IDEONS+</h3>
+      <p>L'abonnement tout compris pour votre IDEONS One.</p>
+      <p class="service-price">[PRIX] <small>/ mois</small></p>
+      <ul class="ticks light">
+        <li>Assurance et entretien inclus</li>
+        <li>Mises à jour logicielles à distance</li>
+        <li>Téléassistance 24/7</li>
+      </ul>
+      <p><a class="btn btn--light full" href="inscription.html">S'abonner</a></p>
+    </article>
+
+    <article class="step reveal">
+      <div class="step__icon">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg>
+      </div>
+      <h3>IDEONS Fleet</h3>
+      <p>Pilotez une flotte autonome pour votre entreprise.</p>
+      <p class="service-price">Sur devis</p>
+      <ul class="ticks">
+        <li>Tableau de bord de flotte en direct</li>
+        <li>Planification des tournées</li>
+        <li>Interlocuteur dédié</li>
+      </ul>
+      <p><a class="btn btn--outline full" href="equipe.html">Contacter l'équipe</a></p>
+    </article>
+  </div>
+
+  <!-- ============================================================
+       CTA — styles : assets/css/11-pages.css
+       ============================================================ -->
+  <section class="cta-band" id="cta">
+    <h2>Prêt à lâcher<br><em>le volant ?</em></h2>
+    <p class="duo"><a class="btn btn--red" href="inscription.html">Créer un compte</a><a class="btn btn--outline" href="#">Réserver un essai</a></p>
+  </section>
+</main>
+
+<!-- FOOTER — styles : assets/css/09-footer.css (bloc partagé) -->
+<footer class="site-footer">
+  <div class="container">
+    <div class="site-footer__top">
+      <div class="site-footer__brand">
+        <div class="wordmark">IDEONS</div>
+        <p>La mobilité autonome, pensée pour les gens.</p>
+      </div>
+
+      <div class="footer-cols">
+        <div class="footer-col">
+          <h4>Produits</h4>
+          <ul>
+            <li><a href="produits.html#vehicules">IDEONS One</a></li>
+            <li><a href="produits.html#vehicules">IDEONS Shuttle</a></li>
+            <li><a href="produits.html#services">IDEONS Ride</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Entreprise</h4>
+          <ul>
+            <li><a href="equipe.html">À propos</a></li>
+            <li><a href="#">Carrières</a></li>
+            <li><a href="#">Presse</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Compte</h4>
+          <ul>
+            <li><a href="connexion.html">Connexion</a></li>
+            <li><a href="inscription.html">Créer un compte</a></li>
+            <li><a href="deconnexion.html">Se déconnecter</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="site-footer__bottom">
+      <span>© 2026 IDEONS. Tous droits réservés.</span>
+      <span><a href="#">Mentions légales</a> · <a href="#">Confidentialité</a> · <a href="#">Cookies</a></span>
+    </div>
+  </div>
+</footer>
+
+<!-- POP-UPS CSS-only (:target) — styles : assets/css/12-auth.css -->
+<div class="overlay" id="connexion" aria-label="Connexion">
+  <div class="modal auth">
+    <a class="modal-close" href="#" aria-label="Fermer">×</a>
+    <div class="auth-side dark">
+      <p class="auth-eyebrow">Espace client</p>
+      <div class="auth-radar" aria-hidden="true"><span></span></div>
+      <h3 class="white">Votre trajet<br>vous attend.</h3>
+      <p class="muted-light">Retrouvez vos réservations, votre véhicule et votre abonnement.</p>
+    </div>
+    <div class="auth-form">
+      <h3>Connexion</h3>
+      <form method="post" action="connexion.html">
+        <label>Adresse e-mail<input type="email" name="email" placeholder="vous@exemple.com" required></label>
+        <div class="row-between"><label for="pw1">Mot de passe</label><a class="more" href="connexion.html">Mot de passe oublié ?</a></div>
+        <label class="pw"><input id="pw1" type="password" name="password" placeholder="••••••••••" required><span aria-hidden="true">👁</span></label>
+        <label class="check"><input type="checkbox" checked> Rester connecté</label>
+        <button class="btn btn--red full" type="submit">Se connecter</button>
+      </form>
+      <p class="or"><span>ou</span></p>
+      <p class="duo">
+        <a class="btn btn--outline" href="connexion.html">Continuer avec Google</a>
+        <a class="btn btn--outline" href="connexion.html">Continuer avec Apple</a>
+      </p>
+      <p class="switch">Pas encore de compte ? <a class="more" href="#inscription">Créer un compte</a></p>
+    </div>
+  </div>
+</div>
+
+<div class="overlay" id="inscription" aria-label="Créer un compte">
+  <div class="modal auth">
+    <a class="modal-close" href="#" aria-label="Fermer">×</a>
+    <div class="auth-side red">
+      <p class="auth-eyebrow light">Nouveau compte</p>
+      <svg class="auth-car" viewBox="0 0 240 92" aria-hidden="true">
+        <ellipse cx="120" cy="84" rx="104" ry="4" fill="#161210" fill-opacity=".25"/>
+        <rect x="108" y="2" width="14" height="7" rx="1" fill="#fff"/>
+        <path d="M8 66c0-8 14-12 40-16l22-16q4-4 12-4h68q8 0 14 6l14 12c27 3 54 6 54 16v6q0 4-6 4H14q-6 0-6-4z" fill="#fff"/>
+        <path d="M76 46l12-12h30v12zM124 46V34h28l14 12z" fill="#a92c24"/>
+        <circle cx="48" cy="74" r="13" fill="#161210"/><circle cx="48" cy="74" r="6" fill="#e9e2d6"/>
+        <circle cx="188" cy="74" r="13" fill="#161210"/><circle cx="188" cy="74" r="6" fill="#e9e2d6"/>
+      </svg>
+      <h3 class="white">Rejoignez<br>IDEONS.</h3>
+      <ul class="ticks light">
+        <li>Réservez un essai en 2 clics</li>
+        <li>Suivez vos trajets en direct</li>
+        <li>Gérez votre abonnement IDEONS+</li>
+      </ul>
+    </div>
+    <div class="auth-form">
+      <h3>Créer un compte</h3>
+      <form method="post" action="inscription.html">
+        <div class="duo-field">
+          <label>Prénom<input type="text" name="prenom" placeholder="Camille" required></label>
+          <label>Nom<input type="text" name="nom" placeholder="Martin" required></label>
+        </div>
+        <label>Adresse e-mail<input type="email" name="email" placeholder="vous@exemple.com" required></label>
+        <label>Mot de passe<input type="password" name="password" placeholder="••••••••••" required></label>
+        <label class="check"><input type="checkbox" checked required> J'accepte les <a class="more" href="#">conditions d'utilisation</a> et la <a class="more" href="#">politique de confidentialité</a>.</label>
+        <button class="btn btn--red full" type="submit">Créer mon compte</button>
+      </form>
+      <p class="switch">Déjà un compte ? <a class="more" href="#connexion">Se connecter</a></p>
+    </div>
+  </div>
+</div>
+
+<div class="overlay" id="deconnexion" aria-label="Se déconnecter">
+  <div class="modal small">
+    <a class="modal-close" href="#" aria-label="Fermer">×</a>
+    <p class="logout-icon" aria-hidden="true">↩</p>
+    <h3>Se déconnecter ?</h3>
+    <p class="muted">Vous devrez vous reconnecter pour accéder à vos trajets, à votre véhicule et à votre abonnement.</p>
+    <p class="duo">
+      <a class="btn btn--outline" href="#">Annuler</a>
+      <a class="btn btn--red" href="deconnexion.html">Se déconnecter</a>
+    </p>
+    <p class="tiny muted">Un trajet en cours ne sera pas interrompu.</p>
+  </div>
+</div>
+
+</body>
+</html>

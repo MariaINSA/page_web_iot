@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Se déconnecter — IDEONS</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Saira+Extra+Condensed:wght@700;800&family=Libre+Caslon+Condensed:wght@400;700&family=IBM+Plex+Mono:ital,wght@1,500&display=swap" rel="stylesheet">
+
+  <!-- Même <head> que index.html : tokens + composants + 11-pages/12-auth. -->
+  <link rel="stylesheet" href="assets/css/01-tokens.css">
+  <link rel="stylesheet" href="assets/css/02-base.css">
+  <link rel="stylesheet" href="assets/css/03-components.css">
+  <link rel="stylesheet" href="assets/css/04-header.css">
+  <link rel="stylesheet" href="assets/css/05-hero.css">
+  <link rel="stylesheet" href="assets/css/06-how.css">
+  <link rel="stylesheet" href="assets/css/07-range.css">
+  <link rel="stylesheet" href="assets/css/08-safety.css">
+  <link rel="stylesheet" href="assets/css/09-footer.css">
+  <link rel="stylesheet" href="assets/css/10-effects.css">
+  <link rel="stylesheet" href="assets/css/11-pages.css">
+  <link rel="stylesheet" href="assets/css/12-auth.css">
+</head>
+
+<body>
+
+<!-- ============================================================
+     HEADER  —  styles : assets/css/04-header.css
+     Bloc partagé : identique sur toutes les pages, seule la ligne
+     « aria-current="page » » change.
+     ============================================================ -->
+<header class="site-header">
+  <div class="site-header__inner">
+    <a href="index.html" class="logo" aria-label="IDEONS, accueil"><span>IDE</span><span>ONS</span></a>
+
+    <nav class="nav" aria-label="Navigation principale">
+      <a href="index.html">Accueil</a>
+      <a href="produits.html">Produits &amp; services</a>
+      <a href="index.html#securite">Sécurité</a>
+      <a href="index.html#gamme">Entreprises</a>
+      <a href="equipe.html">À propos</a>
+    </nav>
+
+    <div class="header-actions">
+      <a href="connexion.html">Connexion</a>
+      <a href="inscription.html" class="btn btn--dark">S'inscrire</a>
+    </div>
+  </div>
+</header>
+
+<!-- PAGE DÉCONNEXION — styles : assets/css/12-auth.css -->
+<main class="container page-center">
+  <div class="modal small static">
+    <p class="logout-icon" aria-hidden="true">↩</p>
+    <h2>Se déconnecter ?</h2>
+    <p class="muted">Vous devrez vous reconnecter pour accéder à vos trajets, à votre véhicule et à votre abonnement.</p>
+    <form method="post" action="#">
+      <p class="duo">
+        <a class="btn btn--outline" href="index.html">Annuler</a>
+        <button class="btn btn--red" type="submit">Se déconnecter</button>
+      </p>
+    </form>
+    <p class="tiny muted">Un trajet en cours ne sera pas interrompu.</p>
+  </div>
+</main>
+
+<!-- ============================================================
+     FOOTER  —  styles : assets/css/09-footer.css
+     Bloc partagé : identique sur toutes les pages.
+     ============================================================ -->
+<footer class="site-footer">
+  <div class="container">
+    <div class="site-footer__top">
+      <div class="site-footer__brand">
+        <div class="wordmark">IDEONS</div>
+        <p>La mobilité autonome, pensée pour les gens.</p>
+      </div>
+
+      <div class="footer-cols">
+        <div class="footer-col">
+          <h4>Produits</h4>
+          <ul>
+            <li><a href="produits.html#vehicules">IDEONS One</a></li>
+            <li><a href="produits.html#vehicules">IDEONS Shuttle</a></li>
+            <li><a href="produits.html#services">IDEONS Ride</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Entreprise</h4>
+          <ul>
+            <li><a href="equipe.html">À propos</a></li>
+            <li><a href="#">Carrières</a></li>
+            <li><a href="#">Presse</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Compte</h4>
+          <ul>
+            <li><a href="connexion.html">Connexion</a></li>
+            <li><a href="inscription.html">Créer un compte</a></li>
+            <li><a href="deconnexion.html">Se déconnecter</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="site-footer__bottom">
+      <span>© 2026 IDEONS. Tous droits réservés.</span>
+      <span><a href="#">Mentions légales</a> · <a href="#">Confidentialité</a> · <a href="#">Cookies</a></span>
+    </div>
+  </div>
+</footer>
+
+<!-- ============================================================
+     POP-UPS CSS-only (:target), sans JS. Liens : #connexion / #inscription
+     / #deconnexion — styles : assets/css/12-auth.css (+ assets/css/11-pages.css)
+     ============================================================ -->
+<div class="overlay" id="connexion" aria-label="Connexion">
+  <div class="modal auth">
+    <a class="modal-close" href="#" aria-label="Fermer">×</a>
+    <div class="auth-side dark">
+      <p class="auth-eyebrow">Espace client</p>
+      <div class="auth-radar" aria-hidden="true"><span></span></div>
+      <h3 class="white">Votre trajet<br>vous attend.</h3>
+      <p class="muted-light">Retrouvez vos réservations, votre véhicule et votre abonnement.</p>
+    </div>
+    <div class="auth-form">
+      <h3>Connexion</h3>
+      <form method="post" action="connexion.html">
+        <label>Adresse e-mail<input type="email" name="email" placeholder="vous@exemple.com" required></label>
+        <div class="row-between"><label for="pw1">Mot de passe</label><a class="more" href="connexion.html">Mot de passe oublié ?</a></div>
+        <label class="pw"><input id="pw1" type="password" name="password" placeholder="••••••••••" required><span aria-hidden="true">👁</span></label>
+        <label class="check"><input type="checkbox" checked> Rester connecté</label>
+        <button class="btn btn--red full" type="submit">Se connecter</button>
+      </form>
+      <p class="or"><span>ou</span></p>
+      <p class="duo">
+        <a class="btn btn--outline" href="connexion.html">Continuer avec Google</a>
+        <a class="btn btn--outline" href="connexion.html">Continuer avec Apple</a>
+      </p>
+      <p class="switch">Pas encore de compte ? <a class="more" href="#inscription">Créer un compte</a></p>
+    </div>
+  </div>
+</div>
+
+<div class="overlay" id="inscription" aria-label="Créer un compte">
+  <div class="modal auth">
+    <a class="modal-close" href="#" aria-label="Fermer">×</a>
+    <div class="auth-side red">
+      <p class="auth-eyebrow light">Nouveau compte</p>
+      <svg class="auth-car" viewBox="0 0 240 92" aria-hidden="true">
+        <ellipse cx="120" cy="84" rx="104" ry="4" fill="#161210" fill-opacity=".25"/>
+        <rect x="108" y="2" width="14" height="7" rx="1" fill="#fff"/>
+        <path d="M8 66c0-8 14-12 40-16l22-16q4-4 12-4h68q8 0 14 6l14 12c27 3 54 6 54 16v6q0 4-6 4H14q-6 0-6-4z" fill="#fff"/>
+        <path d="M76 46l12-12h30v12zM124 46V34h28l14 12z" fill="#a92c24"/>
+        <circle cx="48" cy="74" r="13" fill="#161210"/><circle cx="48" cy="74" r="6" fill="#e9e2d6"/>
+        <circle cx="188" cy="74" r="13" fill="#161210"/><circle cx="188" cy="74" r="6" fill="#e9e2d6"/>
+      </svg>
+      <h3 class="white">Rejoignez<br>IDEONS.</h3>
+      <ul class="ticks light">
+        <li>Réservez un essai en 2 clics</li>
+        <li>Suivez vos trajets en direct</li>
+        <li>Gérez votre abonnement IDEONS+</li>
+      </ul>
+    </div>
+    <div class="auth-form">
+      <h3>Créer un compte</h3>
+      <form method="post" action="inscription.html">
+        <div class="duo-field">
+          <label>Prénom<input type="text" name="prenom" placeholder="Camille" required></label>
+          <label>Nom<input type="text" name="nom" placeholder="Martin" required></label>
+        </div>
+        <label>Adresse e-mail<input type="email" name="email" placeholder="vous@exemple.com" required></label>
+        <label>Mot de passe<input type="password" name="password" placeholder="••••••••••" required></label>
+        <label class="check"><input type="checkbox" checked required> J'accepte les <a class="more" href="#">conditions d'utilisation</a> et la <a class="more" href="#">politique de confidentialité</a>.</label>
+        <button class="btn btn--red full" type="submit">Créer mon compte</button>
+      </form>
+      <p class="switch">Déjà un compte ? <a class="more" href="#connexion">Se connecter</a></p>
+    </div>
+  </div>
+</div>
+
+<div class="overlay" id="deconnexion" aria-label="Se déconnecter">
+  <div class="modal small">
+    <a class="modal-close" href="#" aria-label="Fermer">×</a>
+    <p class="logout-icon" aria-hidden="true">↩</p>
+    <h3>Se déconnecter ?</h3>
+    <p class="muted">Vous devrez vous reconnecter pour accéder à vos trajets, à votre véhicule et à votre abonnement.</p>
+    <p class="duo">
+      <a class="btn btn--outline" href="#">Annuler</a>
+      <a class="btn btn--red" href="deconnexion.html">Se déconnecter</a>
+    </p>
+    <p class="tiny muted">Un trajet en cours ne sera pas interrompu.</p>
+  </div>
+</div>
+
+
+</body>
+</html>
