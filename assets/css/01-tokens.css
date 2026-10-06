@@ -1,0 +1,42 @@
+/* ==========================================================================
+   TOKENS — toutes les variables globales du site.
+   C'est le fichier à ouvrir pour changer une couleur, une police ou un
+   espacement partout sur la page en une seule fois.
+   Utilisé par : tous les autres fichiers CSS.
+   ========================================================================== */
+
+:root {
+  /* Couleurs */
+  --ink: #161210;          /* fond sombre (hero, footer) */
+  --cream: #f5f1ea;        /* fond clair de la page */
+  --paper: #ffffff;        /* cartes, header */
+  --red: #d9443a;          /* rouge d'accent (titres, boutons, voiture) */
+  --red-deep: #c1372c;     /* bloc sécurité */
+  --red-darker: #a92c24;   /* cartes dans le bloc sécurité */
+  --pink: #fbe5e1;         /* pastille des icônes */
+  --green: #2f8f5b;        /* pastille « Autonome » */
+  --muted: #6b635c;        /* texte secondaire sur fond clair */
+  --muted-dark: #a79e94;   /* texte secondaire sur fond sombre */
+  --line: #e8e2d8;         /* filets, bordures de cartes */
+  --num: #d6cec0;          /* gros numéros 01 / 02 / 03 */
+
+  /* Polices */
+  --font-display: "Saira Extra Condensed", "Barlow Condensed", "Arial Narrow", Impact, sans-serif;
+  --font-body: "Libre Caslon Condensed", "Iowan Old Style", Georgia, serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, "SFMono-Regular", Menlo, monospace;
+
+  /* Mise en page */
+  --container: 1010px;
+  --gutter: 64px;          /* marge latérale des sections — redéfinie plus bas en mobile */
+  --radius-card: 22px;
+  --radius-block: 36px;
+  --header-h: 66px;
+}
+
+/* Marges plus petites sur petits écrans : une seule variable à suivre */
+@media (max-width: 960px) {
+  :root { --gutter: 32px; }
+}
+@media (max-width: 560px) {
+  :root { --gutter: 20px; }
+}

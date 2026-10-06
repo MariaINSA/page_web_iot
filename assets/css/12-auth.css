@@ -1,0 +1,229 @@
+/* ==========================================================================
+   AUTH — pop-ups CSS-only (:target) et pages connexion / inscription /
+   déconnexion : .overlay, .modal, .auth, formulaires.
+   Utilisé par : les 3 pop-ups sur toutes les pages + les 3 pages de compte.
+   ========================================================================== */
+
+/* Centrage vertical des pages de compte */
+.page-center {
+  display: flex;
+  justify-content: center;
+  padding: 56px 0 90px;
+}
+
+/* ---------- Pop-up (:target, sans JS) ---------- */
+.overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 60;
+  padding: 24px;
+  background: rgba(22, 18, 16, 0.72);
+  overflow: auto;
+}
+.overlay:target {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal {
+  position: relative;
+  width: 100%;
+  max-width: 880px;
+  margin: auto;
+  overflow: hidden;
+  border-radius: var(--radius-block);
+  background: var(--paper);
+}
+.modal.small {
+  max-width: 460px;
+  padding: 44px 36px 32px;
+  text-align: center;
+}
+.modal.static { margin: 0 auto; }
+
+.modal h2,
+.modal h3 {
+  font-size: 34px;
+  line-height: 1;
+  text-transform: uppercase;
+}
+.modal.small h3,
+.modal.small h2 { margin-bottom: 12px; }
+
+.modal-close {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  z-index: 2;
+  display: grid;
+  place-items: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: var(--cream);
+  color: var(--ink);
+  font-size: 22px;
+  line-height: 1;
+}
+.modal-close:hover { background: var(--line); }
+
+/* ---------- Volet latéral + formulaire ---------- */
+.auth { display: grid; grid-template-columns: 1fr 1.2fr; }
+.auth-side { padding: 44px 36px; }
+.auth-side.dark { background: var(--ink); color: var(--cream); }
+.auth-side.red  { background: var(--red-deep); color: #fff; }
+.auth-side h3 { margin-bottom: 16px; font-size: clamp(34px, 4vw, 46px); line-height: 0.95; }
+
+.auth-eyebrow {
+  margin-bottom: 14px;
+  font-family: var(--font-mono);
+  font-style: italic;
+  font-size: 11.5px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--red);
+}
+.auth-eyebrow.light { color: rgba(255, 255, 255, 0.9); }
+
+/* Radar « espace client » */
+.auth-radar {
+  position: relative;
+  width: 150px;
+  height: 150px;
+  margin: 34px auto;
+  border: 1px solid rgba(217, 68, 58, 0.55);
+  border-radius: 50%;
+}
+.auth-radar::before,
+.auth-radar::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  margin: auto;
+  border: 1px solid rgba(217, 68, 58, 0.35);
+  border-radius: 50%;
+}
+.auth-radar::before { width: 96px; height: 96px; }
+.auth-radar::after  { width: 46px; height: 46px; }
+.auth-radar span {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  z-index: 1;
+  width: 50px;
+  height: 80px;
+  border-radius: 16px;
+  background: var(--red);
+  transform: translate(-50%, -50%);
+}
+.auth-radar span::before {
+  content: "";
+  position: absolute;
+  left: 8px;
+  right: 8px;
+  top: 12px;
+  height: 22px;
+  border-radius: 6px;
+  background: rgba(22, 18, 16, 0.55);
+}
+
+/* Voiture blanche du volet « Créer un compte » */
+.auth-car { display: block; width: 82%; margin: 30px auto 26px; }
+
+.auth-form { padding: 44px 36px; }
+.auth-form h2,
+.auth-form h3 { margin-bottom: 22px; }
+
+.auth-form label {
+  display: block;
+  margin: 14px 0 0;
+  font-size: 14px;
+  color: var(--ink);
+}
+.auth-form input:not([type="checkbox"]) {
+  display: block;
+  width: 100%;
+  margin-top: 6px;
+  padding: 13px 16px;
+  border: 1px solid rgba(22, 18, 16, 0.18);
+  border-radius: 12px;
+  background: #fff;
+  font: inherit;
+  color: var(--ink);
+}
+.auth-form input:not([type="checkbox"]):focus {
+  outline: 2px solid var(--red);
+  outline-offset: 1px;
+  border-color: transparent;
+}
+.auth-form .pw { position: relative; }
+.auth-form .pw input { padding-right: 46px; }
+.auth-form .pw span {
+  position: absolute;
+  right: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--muted);
+  cursor: pointer;
+}
+.row-between {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 12px;
+  margin-top: 16px;
+}
+.row-between label { margin: 0; }
+.auth-form .check {
+  display: flex;
+  gap: 8px;
+  align-items: baseline;
+  font-size: 13.5px;
+  color: var(--muted);
+}
+.auth-form .check input { margin: 0; flex-shrink: 0; }
+
+.auth-form .btn.full { margin-top: 22px; }
+.auth-form .duo { margin-top: 4px; }
+.auth-form .duo .btn { flex: 1 1 auto; }
+
+.or {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin: 24px 0 16px;
+  font-size: 13px;
+  color: var(--muted);
+}
+.or::before,
+.or::after { content: ""; flex: 1; border-top: 1px solid var(--line); }
+
+.switch { margin-top: 20px; font-size: 14px; color: var(--muted); }
+.duo-field { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+.duo-field label:first-child { margin-top: 0; }
+
+/* ---------- Petites modales (déconnexion) ---------- */
+.logout-icon {
+  display: grid;
+  place-items: center;
+  width: 64px;
+  height: 64px;
+  margin: 0 auto 18px;
+  border-radius: 50%;
+  background: var(--pink);
+  color: var(--red-deep);
+  font-size: 26px;
+}
+.modal.small .muted { font-size: 14.5px; }
+.modal.small .duo { justify-content: center; margin-top: 24px; }
+.modal.small .duo .btn { flex: 1 1 auto; }
+.modal.small .tiny { margin-top: 18px; }
+
+@media (max-width: 960px) {
+  .auth { grid-template-columns: 1fr; }
+  .duo-field { grid-template-columns: 1fr; }
+  .auth-side,
+  .auth-form { padding: 34px 26px; }
+}

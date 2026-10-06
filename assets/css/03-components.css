@@ -1,0 +1,72 @@
+/* ==========================================================================
+   COMPONENTS — petits blocs réutilisés dans plusieurs sections.
+   Si tu changes un bouton ou un titre de section ici, ça se répercute
+   partout où il est utilisé (header, how, range, safety...).
+   Utilisé par : header, hero, how, range, safety.
+   ========================================================================== */
+
+/* ---------- Étiquette mono au-dessus des titres, ex. « SÉCURITÉ » ---------- */
+.eyebrow {
+  display: block;
+  margin-bottom: 10px;
+  font-family: var(--font-mono);
+  font-style: italic;
+  font-size: 12px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--red);
+}
+
+/* ---------- Boutons ---------- */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  height: 44px;
+  padding: 0 24px;
+  border: 1px solid transparent;
+  border-radius: 999px;
+  font-family: var(--font-body);
+  font-size: 15px;
+  white-space: nowrap;
+  flex-shrink: 0;
+  cursor: pointer;
+  transition: background-color 0.2s, color 0.2s, border-color 0.2s;
+}
+.btn svg { width: 16px; height: 16px; }
+
+.btn--dark  { background: var(--ink); color: var(--cream); }
+.btn--dark:hover { background: #2b241f; }
+
+.btn--red   { background: var(--red-deep); color: #fff; min-width: 206px; justify-content: space-between; }
+.btn--red:hover { background: #a92c24; }
+
+.btn--ghost { border-color: rgba(245, 241, 234, 0.28); color: var(--cream); min-width: 152px; }
+.btn--ghost:hover { border-color: var(--cream); }
+
+.btn--outline { border-color: var(--ink); color: var(--ink); gap: 40px; }
+.btn--outline:hover { background: var(--ink); color: var(--cream); }
+
+.btn--light { background: #fff; color: var(--ink); padding: 0 32px; height: 46px; }
+.btn--light:hover { background: var(--cream); }
+
+/* ---------- En-tête de section (eyebrow + titre + aside), utilisé par
+   « Comment ça marche » et « La gamme » ---------- */
+.section-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 40px;
+  margin-bottom: 44px;
+}
+.section-title {
+  font-size: clamp(44px, 5.6vw, 64px);
+  line-height: 0.92;
+  text-transform: uppercase;
+}
+.section-head__aside { max-width: 250px; padding-bottom: 6px; font-size: 14.5px; color: var(--muted); }
+
+@media (max-width: 960px) {
+  .section-head { flex-direction: column; align-items: flex-start; }
+}

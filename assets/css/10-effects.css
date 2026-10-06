@@ -1,0 +1,47 @@
+/* ==========================================================================
+   EFFECTS — tout ce qui donne à la page son effet « scroll » : la barre de
+   progression en haut, l'apparition douce des blocs .reveal, et le respect
+   de la préférence "réduire les animations".
+   Ce fichier ne touche à aucune couleur ni mise en page : tu peux le
+   supprimer entièrement sans casser le design, juste perdre les animations.
+   Utilisé par : toute la page (classe .reveal posée sur des blocs au choix).
+   ========================================================================== */
+
+/* ---------- Barre de progression du scroll (CSS pur) ---------- */
+@supports (animation-timeline: scroll()) {
+  body::before {
+    content: "";
+    position: fixed;
+    inset: 0 0 auto 0;
+    height: 3px;
+    z-index: 100;
+    background: linear-gradient(90deg, #2b8cff, #8b5cf6);
+    transform-origin: 0 50%;
+    transform: scaleX(0);
+    animation: progress linear both;
+    animation-timeline: scroll(root);
+  }
+  @keyframes progress { to { transform: scaleX(1); } }
+}
+
+/* ---------- Apparition douce au scroll : ajouter class="reveal" à un
+   bloc pour qu'il apparaisse en fondu quand il entre dans l'écran ---------- */
+@supports (animation-timeline: view()) {
+  .reveal {
+    animation: reveal linear both;
+    animation-timeline: view();
+    animation-range: entry 0% entry 45%;
+  }
+  @keyframes reveal {
+    from { opacity: 0; transform: translateY(28px); }
+    to   { opacity: 1; transform: none; }
+  }
+}
+
+/* ---------- Préférence « réduire les animations » ---------- */
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .reveal { animation: none; opacity: 1; transform: none; }
+  body::before { animation: none; }
+  * { transition-duration: 0.01ms !important; }
+}

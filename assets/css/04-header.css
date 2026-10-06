@@ -1,0 +1,61 @@
+/* ==========================================================================
+   HEADER — <header class="site-header"> en haut de index.html.
+   Utilisé par : la section header uniquement.
+   ========================================================================== */
+
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  height: var(--header-h);
+  background: var(--paper);
+  border-bottom: 1px solid var(--line);
+}
+.site-header__inner {
+  display: flex;
+  align-items: center;
+  height: 100%;
+  width: min(1140px, 100% - 64px);
+  margin-inline: auto;
+  gap: 40px;
+}
+
+.logo {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 24px;
+  line-height: 0.82;
+  letter-spacing: 0.01em;
+  color: var(--red);
+  text-transform: uppercase;
+}
+.logo span { display: block; }
+
+.nav { display: flex; gap: 34px; margin-right: auto; }
+.nav a {
+  position: relative;
+  padding: 22px 0;
+  font-size: 14px;
+  color: var(--muted);
+  transition: color 0.2s;
+}
+.nav a:hover { color: var(--ink); }
+.nav a[aria-current="page"] { color: var(--ink); }
+.nav a[aria-current="page"]::after {
+  content: "";
+  position: absolute;
+  left: 0; right: 0; bottom: 14px;
+  height: 2px;
+  background: var(--red);
+}
+
+.header-actions { display: flex; align-items: center; gap: 28px; font-size: 14px; }
+.header-actions .btn { height: 38px; padding: 0 26px; font-size: 14px; }
+
+@media (max-width: 960px) {
+  .nav { display: none; }
+  .site-header__inner { justify-content: space-between; }
+}
+@media (max-width: 560px) {
+  .header-actions a:not(.btn) { display: none; }
+}

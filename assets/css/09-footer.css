@@ -1,0 +1,42 @@
+/* ==========================================================================
+   FOOTER — <footer class="site-footer"> en bas de index.html.
+   Utilisé par : le footer uniquement.
+   ========================================================================== */
+
+.site-footer { background: var(--ink); color: var(--cream); padding: 60px 0 26px; }
+.site-footer__top { display: flex; justify-content: space-between; gap: 40px; padding-bottom: 44px; }
+.site-footer__brand .wordmark {
+  margin-bottom: 26px;
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 44px;
+  line-height: 1;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+}
+.site-footer__brand p { font-size: 14px; color: var(--muted-dark); }
+
+.footer-cols { display: flex; gap: 64px; }
+.footer-col h4 { margin: 0 0 14px; font-family: var(--font-body); font-weight: 700; font-size: 14px; }
+.footer-col li + li { margin-top: 10px; }
+.footer-col a { font-size: 14px; color: var(--muted-dark); transition: color 0.2s; }
+.footer-col a:hover { color: var(--cream); }
+
+.site-footer__bottom {
+  display: flex;
+  justify-content: space-between;
+  gap: 24px;
+  padding-top: 22px;
+  border-top: 1px solid rgba(245, 241, 234, 0.12);
+  font-size: 12px;
+  color: var(--muted-dark);
+}
+.site-footer__bottom a:hover { color: var(--cream); }
+
+@media (max-width: 960px) {
+  .site-footer__top { flex-direction: column; }
+}
+@media (max-width: 560px) {
+  .footer-cols { flex-wrap: wrap; gap: 32px; }
+  .site-footer__bottom { flex-direction: column; }
+}

@@ -1,0 +1,35 @@
+/* ==========================================================================
+   SAFETY — <section class="safety" id="securite"> : bloc rouge « Chaque
+   trajet, surveillé à 360°. » et ses 4 cartes.
+   Utilisé par : la section safety uniquement.
+   ========================================================================== */
+
+.safety { padding-bottom: 64px; }
+.safety__block {
+  display: grid;
+  grid-template-columns: 1.05fr 1fr;
+  align-items: center;
+  gap: 48px;
+  padding: 72px 62px;
+  border-radius: var(--radius-block);
+  background: var(--red-deep);
+  color: #fff;
+}
+.safety .eyebrow { color: rgba(255, 255, 255, 0.92); }
+.safety__title {
+  margin-bottom: 30px;
+  font-size: clamp(46px, 6.2vw, 74px);
+  line-height: 0.9;
+  text-transform: uppercase;
+}
+.safety__grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+.safety__card { padding: 20px 20px 22px; border-radius: 18px; background: var(--red-darker); }
+.safety__card h3 { margin-bottom: 8px; font-family: var(--font-body); font-weight: 700; font-size: 15px; line-height: 1.2; }
+.safety__card p { max-width: 130px; font-size: 13.5px; line-height: 1.45; color: rgba(255, 255, 255, 0.85); }
+
+@media (max-width: 960px) {
+  .safety__block { grid-template-columns: 1fr; padding: 48px 32px; }
+}
+@media (max-width: 560px) {
+  .safety__grid { grid-template-columns: 1fr; }
+}

@@ -1,0 +1,45 @@
+/* ==========================================================================
+   RANGE — <section class="range" id="gamme"> : « Une solution pour chaque
+   trajet » et les 3 cartes produits (One, Shuttle, Ride).
+   Utilise aussi : .section-head / .section-title (voir 03-components.css),
+   ici légèrement surchargés (alignement, taille de titre différents).
+   Utilisé par : la section range uniquement.
+   ========================================================================== */
+
+.range { padding: 34px 0 84px; }
+.range .section-head { align-items: flex-end; margin-bottom: 30px; }
+.range .section-title { font-size: clamp(44px, 5.8vw, 66px); }
+
+.products { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+.product {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-card);
+  background: var(--paper);
+}
+.product__visual {
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  height: 190px;
+  padding: 0 24px;
+}
+.product__visual--sand { background: #ece6de; }
+.product__visual--ink  { background: var(--ink); }
+.product__visual--red  { background: var(--red); padding: 0; align-items: stretch; }
+.product__visual svg   { width: 100%; height: auto; max-height: 100%; }
+.product__visual--red svg { height: 100%; }
+
+.product__body { display: flex; flex-direction: column; flex: 1; padding: 22px 26px 22px; }
+.product__body h3 { margin-bottom: 6px; font-size: 26px; line-height: 1; text-transform: uppercase; }
+.product__body p { flex: 1; margin-bottom: 18px; font-size: 14px; color: var(--muted); }
+.product__foot { display: flex; justify-content: space-between; align-items: center; font-size: 14px; }
+.product__link { display: inline-flex; align-items: center; gap: 10px; color: var(--red); }
+.product__link svg { width: 14px; height: 14px; }
+.product__link:hover { text-decoration: underline; text-underline-offset: 3px; }
+
+@media (max-width: 960px) {
+  .products { grid-template-columns: 1fr; }
+}

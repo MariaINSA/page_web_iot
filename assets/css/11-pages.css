@@ -1,0 +1,219 @@
+/* ==========================================================================
+   PAGES — styles des pages internes (Produits & services) + petits
+   utilitaires partagés partout où il manque un composant :
+   .duo, .full, .more, .ticks, .muted, .white, .red, .label...
+   Utilisé par : toutes les pages (utilitaires), produits.html surtout.
+   ========================================================================== */
+
+/* ---------- Utilitaires partagés ---------- */
+.red   { color: var(--red); }
+.white { color: #fff; }
+.muted       { color: var(--muted); line-height: 1.6; }
+.muted-light { color: rgba(245, 241, 234, 0.75); line-height: 1.6; }
+.tiny  { font-size: 12px; }
+
+.more { color: var(--red); }
+.more:hover { text-decoration: underline; text-underline-offset: 3px; }
+
+.duo  { display: flex; flex-wrap: wrap; gap: 12px; }
+.full { width: 100%; justify-content: center; }
+
+/* Étiquette mono grise (fiches produits) */
+.label {
+  display: block;
+  margin-bottom: 8px;
+  font-family: var(--font-mono);
+  font-style: italic;
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+/* Listes à coches (services, pop-up inscription) */
+.ticks li {
+  position: relative;
+  padding-left: 22px;
+  margin: 8px 0;
+  font-size: 14.5px;
+}
+.ticks li::before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  color: var(--red);
+  font-weight: 700;
+}
+.ticks.light li { color: rgba(255, 255, 255, 0.9); }
+.ticks.light li::before { color: #fff; }
+
+/* ---------- Conteneur des pages internes ---------- */
+.page { padding: 56px 0 90px; }
+
+/* Accent rouge dans un titre de section (variante du <em> du hero) */
+.section-title em,
+.cta-band h2 em { font-style: normal; color: var(--red); }
+
+/* ---------- Page Produits & services ---------- */
+.crumb { margin-bottom: 20px; font-size: 14px; color: var(--muted); }
+.crumb a:hover { color: var(--ink); text-decoration: underline; text-underline-offset: 3px; }
+
+.pills { display: flex; flex-wrap: wrap; gap: 10px; margin: 0 0 8px; }
+.pill {
+  display: inline-flex;
+  align-items: center;
+  height: 38px;
+  padding: 0 20px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: var(--paper);
+  font-size: 14px;
+  color: var(--muted);
+  transition: background-color 0.2s, color 0.2s, border-color 0.2s;
+}
+.pill:hover { border-color: var(--ink); color: var(--ink); }
+.pill.active { background: var(--ink); border-color: var(--ink); color: var(--cream); }
+
+.rule {
+  margin: 56px 0 26px;
+  padding-top: 16px;
+  border-top: 1px solid var(--line);
+  font-family: var(--font-mono);
+  font-style: italic;
+  font-weight: 500;
+  font-size: 13px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--red);
+}
+
+/* Grille 2 colonnes (surcharge de .products — assets/css/07-range.css) */
+.products--2 { grid-template-columns: repeat(2, 1fr); }
+
+/* Carte produit sombre (surcharge de .product — assets/css/07-range.css) */
+.product--dark { background: var(--ink); border-color: var(--ink); color: var(--cream); }
+.product--dark .product__body p { color: var(--muted-dark); }
+.product--dark .label { color: var(--muted-dark); }
+.product--dark .specs { border-color: rgba(245, 241, 234, 0.16); }
+.product--dark .specs dt { color: var(--muted-dark); }
+.product--dark .specs dd { color: var(--cream); }
+.product--dark .tarif { color: var(--muted-dark); }
+.product--dark .tarif strong { color: var(--cream); }
+
+/* Pastille « Nouveau » sur le visuel produit */
+.product__visual { position: relative; }
+.badge {
+  position: absolute;
+  top: 16px;
+  left: 16px;
+  z-index: 1;
+  padding: 6px 14px;
+  border-radius: 999px;
+  background: var(--ink);
+  color: var(--cream);
+  font-family: var(--font-mono);
+  font-style: italic;
+  font-size: 10.5px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.product__head {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 16px;
+}
+.product__head .label { margin-bottom: 6px; }
+.tarif { flex-shrink: 0; text-align: right; font-size: 13px; color: var(--muted); }
+.tarif strong {
+  display: block;
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 30px;
+  line-height: 1;
+  text-transform: uppercase;
+  color: var(--ink);
+}
+
+.specs {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+  margin: 18px 0 22px;
+  padding: 16px 0;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+.specs dt {
+  font-family: var(--font-mono);
+  font-style: italic;
+  font-size: 10.5px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+.specs dd { margin: 4px 0 0; font-weight: 700; font-size: 15px; }
+
+/* ---------- Cartes services (réutilisent .step — assets/css/06-how.css) ---------- */
+.services .step { display: flex; flex-direction: column; min-height: 0; }
+.services .step p { max-width: none; }
+.services .step > p:last-child { margin-top: auto; padding-top: 22px; }
+.services .ticks { margin-bottom: 4px; }
+.services .step__icon { margin-bottom: 26px; }
+
+.services .service-price {
+  margin: 14px 0 10px;
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 30px;
+  line-height: 1;
+  text-transform: uppercase;
+  color: var(--ink);
+}
+.services .service-price small {
+  font-family: var(--font-body);
+  font-weight: 400;
+  font-size: 13px;
+  color: var(--muted);
+}
+
+/* Variante rouge (abonnement IDEONS+) */
+.step--red { background: var(--red-deep); border-color: var(--red-deep); color: #fff; }
+.step--red p { color: rgba(255, 255, 255, 0.86); }
+.step--red h3 { color: #fff; }
+.step--red .step__icon { background: rgba(255, 255, 255, 0.18); color: #fff; }
+.step--red .service-price { color: #fff; }
+.step--red .service-price small { color: rgba(255, 255, 255, 0.75); }
+
+/* Pastille « Populaire » en haut à droite d'une carte .step */
+.step__badge { top: 26px; left: auto; right: 30px; background: #fff; color: var(--red-deep); }
+
+/* ---------- Bandeau final ---------- */
+.cta-band {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 28px;
+  margin-top: 64px;
+  padding: 56px 52px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-block);
+  background: var(--paper);
+}
+.cta-band h2 {
+  font-size: clamp(40px, 5vw, 58px);
+  line-height: 0.92;
+  text-transform: uppercase;
+}
+
+@media (max-width: 960px) {
+  .products--2 { grid-template-columns: 1fr; }
+  .specs { grid-template-columns: repeat(2, 1fr); }
+  .cta-band { padding: 40px 28px; }
+}
+@media (max-width: 560px) {
+  .product__head { flex-direction: column; gap: 8px; }
+  .tarif { text-align: left; }
+}

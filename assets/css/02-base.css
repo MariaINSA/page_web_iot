@@ -1,0 +1,47 @@
+/* ==========================================================================
+   BASE — reset, typographie générale, liens, et le conteneur .container
+   utilisé par (presque) toutes les sections pour centrer leur contenu.
+   Utilisé par : toute la page.
+   ========================================================================== */
+
+*,
+*::before,
+*::after { box-sizing: border-box; }
+
+html {
+  scroll-behavior: smooth;                 /* défilement fluide vers les ancres */
+  scroll-padding-top: var(--header-h);     /* le header sticky ne masque pas les titres */
+  -webkit-text-size-adjust: 100%;
+}
+
+/* Pour un effet « diapositives » plein écran, décommenter :
+html { scroll-snap-type: y proximity; }
+.hero, .how, .range, .safety, .site-footer { scroll-snap-align: start; } */
+
+body {
+  margin: 0;
+  background: var(--cream);
+  color: var(--ink);
+  font-family: var(--font-body);
+  font-size: 16px;
+  line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
+}
+
+img, svg { display: block; max-width: 100%; }
+a { color: inherit; text-decoration: none; }
+p { margin: 0; }
+h1, h2, h3 { margin: 0; font-family: var(--font-display); font-weight: 800; }
+ul { margin: 0; padding: 0; list-style: none; }
+
+:focus-visible {
+  outline: 2px solid var(--red);
+  outline-offset: 3px;
+  border-radius: 6px;
+}
+
+/* Conteneur centré, largeur max = --container, marge = --gutter (token) */
+.container {
+  width: min(var(--container), 100% - 2 * var(--gutter));
+  margin-inline: auto;
+}
